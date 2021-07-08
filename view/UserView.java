@@ -32,17 +32,13 @@ public class UserView extends JFrame {
             pin=Integer.parseInt(textPin);
             info.setText("Got it: "+pin+"Waiting..");
 
-            boolean result= controller.checkPin(pin);
-
             String resultMessage=null;
-
-            if(!result){
-                resultMessage = "Right";
-            }else {
-                resultMessage="Wrong, try again";
-            }
-
+             resultMessage= controller.checkPin(pin);
+//            while (resultMessage==null){
+//                //System.out.println("checking result. wait");
+//            }
             info.setText(resultMessage);
+
         });
 
         setVisible(true);
