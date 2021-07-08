@@ -1,3 +1,5 @@
+
+
 package patterns.mvc.model;
 
 import java.sql.Time;

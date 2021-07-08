@@ -14,6 +14,5 @@ public class Main {
         SwingUtilities.invokeLater(()->{
             userView.init();
         });
-
     }
 }

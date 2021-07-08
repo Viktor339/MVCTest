@@ -1,3 +1,4 @@
+
 package patterns.mvc.view;
 
 import patterns.mvc.controller.Controller;
@@ -10,6 +11,7 @@ public class UserView extends JFrame {
     private  JButton sendButton;
     private  JLabel info;
     private Controller controller;
+
     public UserView(Controller controller){
         this.controller=controller;
     }
@@ -30,17 +32,17 @@ public class UserView extends JFrame {
             pin=Integer.parseInt(textPin);
             info.setText("Got it: "+pin+"Waiting..");
 
-           boolean result= controller.checkPin(pin);
+            boolean result= controller.checkPin(pin);
 
-           String resultMessage=null;
+            String resultMessage=null;
 
-           if(!result){
-               resultMessage = "Right";
-           }else {
-               resultMessage="Wrong, try again";
-           }
+            if(!result){
+                resultMessage = "Right";
+            }else {
+                resultMessage="Wrong, try again";
+            }
 
-           info.setText(resultMessage);
+            info.setText(resultMessage);
         });
 
         setVisible(true);
