@@ -2,11 +2,10 @@
 
 package patterns.mvc.model;
 
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 public class Model {
-    private  int pin=1234;
+    private int pin=1234;
 
     public int getPin() {
         try {
@@ -15,11 +14,7 @@ public class Model {
             e.printStackTrace();
         }
 
-
         return pin;
     }
 
-    public void setPin(int pin) {
-        this.pin = pin;
-    }
 }

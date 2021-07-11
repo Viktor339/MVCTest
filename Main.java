@@ -9,8 +9,9 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         Model model=new Model();
-        Controller controller = new Controller(model);
-        UserView userView = new UserView(controller);
+        UserView userView = new UserView();
+        Controller controller = new Controller(model,userView);
+
         SwingUtilities.invokeLater(()->{
             userView.init();
         });
