@@ -2,9 +2,9 @@ package patterns.mvc.controller;
 
 import patterns.mvc.model.Model;
 import patterns.mvc.view.UserView;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 
 public class Controller {
@@ -23,20 +23,20 @@ public class Controller {
 
             try {
                 int pin;
-                String textPin=view.returnText().getText();
-                pin=Integer.parseInt(textPin);
-                view.getInfo().setText("Got it: "+pin+" Waiting..");
+                String textPin = view.returnText().getText();
+                pin = Integer.parseInt(textPin);
+                view.getInfo().setText("Got it: " + pin + " Waiting..");
 
                 var ref = new Object() {
                     String resultMessage;
                 };
 
-                Thread thread = new Thread(()->{
-                    boolean result= model.getPin() == pin;
-                    if(result){
-                       ref.resultMessage = "Right";
-                    }else {
-                        ref.resultMessage ="Wrong, try again";
+                Thread thread = new Thread(() -> {
+                    boolean result = model.getPin() == pin;
+                    if (result) {
+                        ref.resultMessage = "Right";
+                    } else {
+                        ref.resultMessage = "Wrong, try again";
                     }
                     view.getInfo().setText(ref.resultMessage);
                 });
@@ -44,6 +44,7 @@ public class Controller {
 
             } catch (NumberFormatException ex) {
                 System.out.println(ex);
+                view.displayErrorMessage("You Need to Enter Integer Pass");
             }
         }
     }

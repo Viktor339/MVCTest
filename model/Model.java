@@ -5,7 +5,7 @@ package patterns.mvc.model;
 import java.util.concurrent.TimeUnit;
 
 public class Model {
-    private int pin=1234;
+    private int pin = 1234;
 
     public int getPin() {
         try {

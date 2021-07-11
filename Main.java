@@ -8,11 +8,11 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Model model=new Model();
+        Model model = new Model();
         UserView userView = new UserView();
-        Controller controller = new Controller(model,userView);
+        Controller controller = new Controller(model, userView);
 
-        SwingUtilities.invokeLater(()->{
+        SwingUtilities.invokeLater(() -> {
             userView.init();
         });
     }
