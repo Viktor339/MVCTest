@@ -12,6 +12,9 @@ public class UserView extends JFrame {
     private JButton sendButton = new JButton("Send");
     private JLabel info;
 
+    public JButton getSendButton() {
+        return sendButton;
+    }
 
     public JTextArea returnText() {
         return text;

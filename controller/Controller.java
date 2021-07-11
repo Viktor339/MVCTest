@@ -22,6 +22,8 @@ public class Controller {
         public void actionPerformed(ActionEvent e) {
 
             try {
+                view.getSendButton().setEnabled(false);
+
                 int pin;
                 String textPin = view.returnText().getText();
                 pin = Integer.parseInt(textPin);
@@ -39,6 +41,8 @@ public class Controller {
                         ref.resultMessage = "Wrong, try again";
                     }
                     view.getInfo().setText(ref.resultMessage);
+
+                    view.getSendButton().setEnabled(true);
                 });
                 thread.start();
 
